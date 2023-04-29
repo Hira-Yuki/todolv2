@@ -38,7 +38,7 @@ function App() {
   // 입력된 데이터로 객체를 생성한 뒤 Store로 전송
   const onSubmitHandler = () => {
     if (subtitle === "" || todoBody === "") {
-      return alert("필수 항목이 채워지지 않았습니다.")
+      return alert("필수 항목이 채워지지 않았습니다.");
     }
     const newTodo = {
       id: Math.random(),
@@ -86,6 +86,7 @@ function App() {
         </S.StSidebar>
         {/* 출력 영역 */}
         <S.StOutputAera>
+          <Router />
           {/* 진행 중인 작업 영역 */}
           <S.StTodosBox>
             <h3>Working...</h3>
