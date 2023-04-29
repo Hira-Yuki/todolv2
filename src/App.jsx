@@ -85,12 +85,26 @@ function App() {
             <h3>Done!</h3>
             <S.StTodoCards>
               {/* 카드로 출력하는 영역 */}
-              <S.StTodoCard>
+              {/* <S.StTodoCard>
                 <h4>Title</h4>
                 <p>Body</p>
                 <button>Cancel</button>
                 <button>Delete</button>
-              </S.StTodoCard>
+              </S.StTodoCard> */}
+
+              {
+                todoStore?.map((item)=> {
+                  return (
+                    <S.StTodoCard>
+                      <h4>{item.title}</h4>
+                      <p>{item.body}</p>
+                      <button>Cancel</button>
+                      <button>Delete</button>
+                    </S.StTodoCard>
+                  )
+                })
+              }
+
             </S.StTodoCards>
           </S.StTodosBox>
         </S.StOutputAera>
