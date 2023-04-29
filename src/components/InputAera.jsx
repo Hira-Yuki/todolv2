@@ -1,14 +1,14 @@
 import * as S from "../Style";
 
-function InputAera(
+function InputAera({
   subtitle,
   onSubtitleHandler,
   todoBody,
   onTodoBodyHandler,
-  onSubmitHandler
-) {
-
-    console.log("subtitle",subtitle)
+  onSubmitHandler,
+}) {
+  console.log("subtitle", subtitle);
+  console.log("todoBody", todoBody);
   return (
     <>
       <S.StCreateTodo>
