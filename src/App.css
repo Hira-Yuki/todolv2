@@ -60,3 +60,6 @@ h4 {
   border-left: 5px solid yellowgreen;
   padding-left: 5px;
 }
+button {
+	margin: 5px;
+}
