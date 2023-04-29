@@ -41,7 +41,7 @@ function App() {
       return alert("필수 항목이 채워지지 않았습니다.");
     }
     const newTodo = {
-      id: Math.random(),
+      id: Date.now(),
       title: subtitle,
       body: todoBody,
       isDone: false,
