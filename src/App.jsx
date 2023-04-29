@@ -5,11 +5,12 @@ import * as S from "./Style";
 import { useDispatch, useSelector } from "react-redux";
 import InputAera from "./components/InputAera";
 import { createTodo, removeTodo, changeTodo } from "./redux/modules/todo";
+
 function App() {
   // Store 조회
   const todoStore = useSelector((state) => state).todoReducer;
-  // console.log("todoReducer -> ", todoStore);
-
+  
+  // Store에 데이터를 보내주기 위한 메서드
   const dispatch = useDispatch();
 
   // 할일을 생성하기 위해 입력한 데이터를 받아오기
@@ -33,6 +34,7 @@ function App() {
   };
 
   // submit 버튼 클릭시 동작하는 함수
+  // 입력된 데이터로 객체를 생성한 뒤 Store로 전송
   const onSubmitHandler = () => {
     const newTodo = {
       id: Math.random(),
@@ -45,15 +47,18 @@ function App() {
     clearForm();
   };
 
-  //
+  // 할일을 제거하는 함수
   const removeTodoButton = function (id) {
     const removeTodoId = id;
+
     dispatch(removeTodo(removeTodoId));
   };
 
+  // 할일의 상태를 변경하는 함수
   const isDoneHandler = function (id) {
-    const changeTodoID = id;
-    dispatch(changeTodo(changeTodoID));
+    const changeTodoId = id;
+
+    dispatch(changeTodo(changeTodoId));
   };
 
   return (
