@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import "./App.css";
 // Styled Components를 저장한 파일의 전체를 임포트하고 별칭으로 S를 붙여서 호출함
 import * as S from "./Style";
@@ -7,7 +7,7 @@ import InputAera from "./components/InputAera";
 function App() {
   // Store 조회
   const todoStore = useSelector((state) => state);
-  console.log("todoReducer -> ", todoStore);
+  console.log("todoReducer -> ", todoStore.todoReducer);
 
   const dispatch = useDispatch();
 
@@ -16,21 +16,16 @@ function App() {
   const [todoBody, setTodoBody] = useState("");
 
   // 변경된 값을 저장하는 함수
-  const onSubtitleHandler = useCallback(
-    (event) => {
+  const onSubtitleHandler = ((event) => {
       const inputSubtitle = event.target.value;
       setSubtitle(inputSubtitle);
     },
-    [setSubtitle]
-  );
-  const onTodoBodyHandler = useCallback(
-    (event) => {
+    [setSubtitle]);
+  const onTodoBodyHandler = ((event) => {
       const inputTodoBody = event.target.value;
       setTodoBody(inputTodoBody);
     },
-    [setTodoBody]
-  );
-
+    [setTodoBody]);
 
   // 입력 폼을 지우는 함수
   const clearForm = () => {
