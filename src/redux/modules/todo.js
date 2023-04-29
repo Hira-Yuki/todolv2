@@ -16,12 +16,12 @@ const initialState = [
 
 // 리듀서
 const todoReducer = (state = initialState, action) => {
-  console.log("state",state)
-  console.log("action",action)
+  // console.log("state",state)
+  // console.log("action",action)
   switch (action.type) {
 
     case "CREATE_TODO":
-      return {initialState : [...initialState, action.payload]}
+      return [...state, action.payload];
     default:
       return state;
   }

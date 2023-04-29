@@ -7,8 +7,6 @@ function InputAera({
   onTodoBodyHandler,
   onSubmitHandler,
 }) {
-  console.log("subtitle", subtitle);
-  console.log("todoBody", todoBody);
   return (
     <>
       <S.StCreateTodo>
