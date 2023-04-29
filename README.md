@@ -1,3 +1,5 @@
+![:name](https://count.getloli.com/get/@:todov2?theme=gelbooru)
+
 # 기존의 Todo-List App을 개량한 버전입니다.
 
 `react-router-dom`, `styled-components`, `redux`를 사용해서 My Todo List 를 다시 만듭니다.
