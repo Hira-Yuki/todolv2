@@ -63,10 +63,15 @@ export const StTodoCard = styled.div`
   border-radius: 5px;
   padding: 5px;
   margin: 10px;
-  width: 20%;
+  width: 25%;
+  height: 100px;
 `;
 
 export const StTodoCards = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+export const StPCard = styled.p`
+margin: 5px;
+`

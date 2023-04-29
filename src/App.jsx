@@ -4,10 +4,11 @@ import "./App.css";
 import * as S from "./Style";
 import { useDispatch, useSelector } from "react-redux";
 import InputAera from "./components/InputAera";
+import { createTodo, removeTodo, changeTodo } from "./redux/modules/todo";
 function App() {
   // Store 조회
-  const todoStore = useSelector((state) => state);
-  console.log("todoReducer -> ", todoStore.todoReducer);
+  const todoStore = useSelector((state) => state).todoReducer;
+  // console.log("todoReducer -> ", todoStore);
 
   const dispatch = useDispatch();
 
@@ -16,16 +17,14 @@ function App() {
   const [todoBody, setTodoBody] = useState("");
 
   // 변경된 값을 저장하는 함수
-  const onSubtitleHandler = ((event) => {
-      const inputSubtitle = event.target.value;
-      setSubtitle(inputSubtitle);
-    },
-    [setSubtitle]);
-  const onTodoBodyHandler = ((event) => {
-      const inputTodoBody = event.target.value;
-      setTodoBody(inputTodoBody);
-    },
-    [setTodoBody]);
+  const onSubtitleHandler = (event) => {
+    const inputSubtitle = event.target.value;
+    setSubtitle(inputSubtitle);
+  };
+  const onTodoBodyHandler = (event) => {
+    const inputTodoBody = event.target.value;
+    setTodoBody(inputTodoBody);
+  };
 
   // 입력 폼을 지우는 함수
   const clearForm = () => {
@@ -42,8 +41,19 @@ function App() {
       isDone: false,
     };
 
-    dispatch({ type: "CREATE_TODO", payload: newTodo });
+    dispatch(createTodo(newTodo));
     clearForm();
+  };
+
+  //
+  const removeTodoButton = function (id) {
+    const removeTodoId = id;
+    dispatch(removeTodo(removeTodoId));
+  };
+
+  const isDoneHandler = function (id) {
+    const changeTodoID = id;
+    dispatch(changeTodo(changeTodoID));
   };
 
   return (
@@ -71,40 +81,46 @@ function App() {
           <S.StTodosBox>
             <h3>Working...</h3>
             <S.StTodoCards>
-              {/* 카드로 출력하는 영역 */}
-              <S.StTodoCard>
-                <h4>Title</h4>
-                <p>Body</p>
-                <button>Done</button>
-                <button>Delete</button>
-              </S.StTodoCard>
+              {todoStore
+                ?.filter((item) => !item.isDone)
+                .map((item) => {
+                  return (
+                    <S.StTodoCard key={item.id}>
+                      <h4>{item.title}</h4>
+                      <S.StPCard>{item.body}</S.StPCard>
+                      <footer>id: {item.id}</footer>
+                      <button onClick={() => isDoneHandler(item.id)}>
+                        Done
+                      </button>
+                      <button onClick={() => removeTodoButton(item.id)}>
+                        Remove
+                      </button>
+                    </S.StTodoCard>
+                  );
+                })}
             </S.StTodoCards>
           </S.StTodosBox>
           {/* 완료한 작업 영역 */}
           <S.StTodosBox>
             <h3>Done!</h3>
             <S.StTodoCards>
-              {/* 카드로 출력하는 영역 */}
-              {/* <S.StTodoCard>
-                <h4>Title</h4>
-                <p>Body</p>
-                <button>Cancel</button>
-                <button>Delete</button>
-              </S.StTodoCard> */}
-
-              {
-                todoStore?.map((item)=> {
+              {todoStore
+                ?.filter((item) => item.isDone)
+                .map((item) => {
                   return (
-                    <S.StTodoCard>
+                    <S.StTodoCard key={item.id}>
                       <h4>{item.title}</h4>
-                      <p>{item.body}</p>
-                      <button>Cancel</button>
-                      <button>Delete</button>
+                      <S.StPCard>{item.body}</S.StPCard>
+                      <footer>id: {item.id}</footer>
+                      <button onClick={() => isDoneHandler(item.id)}>
+                        Cancel
+                      </button>
+                      <button onClick={() => removeTodoButton(item.id)}>
+                        Remove
+                      </button>
                     </S.StTodoCard>
-                  )
-                })
-              }
-
+                  );
+                })}
             </S.StTodoCards>
           </S.StTodosBox>
         </S.StOutputAera>
