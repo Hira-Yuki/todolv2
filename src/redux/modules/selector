@@ -1,0 +1,4 @@
+
+export const TodoSelctors = {
+  getTodos: (state) => state.todoReducer,
+};

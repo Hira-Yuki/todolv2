@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Router from "./shared/router";
 import "./App.css";
 // Styled Components를 저장한 파일의 전체를 임포트하고 별칭으로 S를 붙여서 호출함
 import * as S from "./Style";
@@ -9,7 +10,7 @@ import { createTodo, removeTodo, changeTodo } from "./redux/modules/todo";
 function App() {
   // Store 조회
   const todoStore = useSelector((state) => state).todoReducer;
-  
+
   // Store에 데이터를 보내주기 위한 메서드
   const dispatch = useDispatch();
 
@@ -36,6 +37,9 @@ function App() {
   // submit 버튼 클릭시 동작하는 함수
   // 입력된 데이터로 객체를 생성한 뒤 Store로 전송
   const onSubmitHandler = () => {
+    if (subtitle === "" || todoBody === "") {
+      return alert("필수 항목이 채워지지 않았습니다.")
+    }
     const newTodo = {
       id: Math.random(),
       title: subtitle,
