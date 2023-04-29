@@ -1,90 +1,20 @@
 import React from "react";
 import "./App.css";
-import styled from "styled-components";
-
-// 콘텐츠 전체를 감쌀 컨테이너 스타일
-// 너비 최대 1200px, 최소 800px
-const StContainer = styled.div`
-  margin: 5px auto;
-  max-width: 1200px;
-  min-width: 800px;
-  background-color: #f8e1f6;
-`;
-
-const StHeader = styled.header`
-  border: 2px solid tomato;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 5px;
-`;
-const StMain = styled.main`
-  /* border: 2px solid tomato;
-  border-radius: 10px; */
-  margin: 5px;
-  padding: 5px;
-  display: flex;
-  flex-direction: initial;
-  height: 100vh;
-`;
-
-const StTodosBox = styled.div`
-  border: 2px solid tomato;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding: 5px;
-`;
-
-const StFooter = styled.footer`
-  border: 2px solid tomato;
-  border-radius: 10px;
-  margin: 5px;
-`;
-
-const StSidebar = styled.div`
-  margin-top: 5px;
-  /* border: 2px solid tomato;
-  border-radius: 10px;  */
-  flex-basis: 25%;
-`;
-
-const StOutputAera = styled.div`
-  margin: 5px;
-  flex: 1;
-  display: grid;
-`;
-
-const StCreateTodo = styled.div`
-  border: 2px solid tomato;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 5px;
-  height: 250px;
-`;
-const StTodoCard = styled.div`
-  border: 2px solid lightblue;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 10px;
-  width: 20%;
-`;
-
-const StTodoCards = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
+// Styled Components를 저장한 파일의 전체를 임포트하고 별칭으로 S를 붙여서 호출함
+import * as S from "./Style"
 
 function App() {
   return (
-    <StContainer>
+    <S.StContainer>
       {/* 헤딩 영역 */}
-      <StHeader>
+      <S.StHeader>
         <h1>Enhanced To-do list</h1>
         <p>List and manage your 'To-dos'!</p>
-      </StHeader>
-      <StMain>
+      </S.StHeader>
+      <S.StMain>
         {/* 사이드 바 영역 */}
-        <StSidebar>
-          <StCreateTodo>
+        <S.StSidebar>
+          <S.StCreateTodo>
             <h3>Do it!</h3>
             <ul>
               제목:
@@ -97,42 +27,42 @@ function App() {
               <textarea rows="5" type="text" style={{ width: "95%" }} />
             </ul>
             <button>Submit</button>
-          </StCreateTodo>
+          </S.StCreateTodo>
           <p> &nbsp;✓ 사이드 바에 콘텐츠 추가?</p>
-        </StSidebar>
+        </S.StSidebar>
         {/* 출력 영역 */}
-        <StOutputAera>
+        <S.StOutputAera>
           {/* 진행 중인 작업 영역 */}
-          <StTodosBox>
+          <S.StTodosBox>
             <h3>Working...</h3>
-            <StTodoCards>
+            <S.StTodoCards>
               {/* 카드로 출력하는 영역 */}
-              <StTodoCard>
+              <S.StTodoCard>
                 <h4>Title</h4>
                 <p>Body</p>
                 <button>Done</button>
                 <button>Delete</button>
-              </StTodoCard>
-            </StTodoCards>
-          </StTodosBox>
+              </S.StTodoCard>
+            </S.StTodoCards>
+          </S.StTodosBox>
           {/* 완료한 작업 영역 */}
-          <StTodosBox>
+          <S.StTodosBox>
             <h3>Done!</h3>
-            <StTodoCards>
+            <S.StTodoCards>
               {/* 카드로 출력하는 영역 */}
-              <StTodoCard>
+              <S.StTodoCard>
                 <h4>Title</h4>
                 <p>Body</p>
                 <button>Cancel</button>
                 <button>Delete</button>
-              </StTodoCard>
-            </StTodoCards>
-          </StTodosBox>
-        </StOutputAera>
-      </StMain>
+              </S.StTodoCard>
+            </S.StTodoCards>
+          </S.StTodosBox>
+        </S.StOutputAera>
+      </S.StMain>
       {/* 푸터 영역 */}
-      <StFooter>Designed by Hira</StFooter>
-    </StContainer>
+      <S.StFooter>Designed by Hira</S.StFooter>
+    </S.StContainer>
   );
 }
 
