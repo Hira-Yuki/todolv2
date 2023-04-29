@@ -36,4 +36,4 @@
 - Todo Id 생성 시 `todos.length` 사용해서 생성하지 않습니다. `todos.length` 을 사용해서 id 생성 시 **발생할 수 있는 문제점에 대해 고민**해볼 것
 
 ### 기타
-- todos 모듈의 initialState 는 있어도 되고, 없어도 됩
+- todos 모듈의 initialState 는 있어도 되고, 없어도 됩니다.
