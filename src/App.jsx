@@ -3,9 +3,8 @@ import "./App.css";
 // Styled Components를 저장한 파일의 전체를 임포트하고 별칭으로 S를 붙여서 호출함
 import * as S from "./Style";
 import { useDispatch, useSelector } from "react-redux";
-
+import InputAera from "./components/InputAera";
 function App() {
-
   // Store 조회
   const todoStore = useSelector((state) => state);
   console.log("todoReducer -> ", todoStore);
@@ -26,6 +25,12 @@ function App() {
     setTodoBody(inputTodoBody);
   };
 
+  // 입력 폼을 지우는 함수
+  const clearForm = () => {
+    setSubtitle("");
+    setTodoBody("");
+  };
+
   // submit 버튼 클릭시 동작하는 함수
   const onSubmitHandler = () => {
     const newTodo = {
@@ -35,9 +40,8 @@ function App() {
       isDone: false,
     };
 
-    dispatch({ type : "CREATE_TODO", payload: newTodo });
-    setSubtitle("");
-    setTodoBody("");
+    dispatch({ type: "CREATE_TODO", payload: newTodo });
+    clearForm();
   };
 
   return (
@@ -50,7 +54,7 @@ function App() {
       <S.StMain>
         {/* 사이드 바 영역 */}
         <S.StSidebar>
-          <S.StCreateTodo>
+          {/* <S.StCreateTodo>
             <h3>Do it!</h3>
             <ul>
               제목:
@@ -77,7 +81,14 @@ function App() {
               />
             </ul>
             <button onClick={onSubmitHandler}>Submit</button>
-          </S.StCreateTodo>
+          </S.StCreateTodo> */}
+          <InputAera
+            subtitle={subtitle}
+            onSubtitleHandler={onSubtitleHandler}
+            todoBody={todoBody}
+            onTodoBodyHandler={onTodoBodyHandler}
+            onSubmitHandler={onSubmitHandler}
+          />
           <p> &nbsp;✓ 사이드 바에 콘텐츠 추가?</p>
         </S.StSidebar>
         {/* 출력 영역 */}
