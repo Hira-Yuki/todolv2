@@ -1,3 +1,6 @@
+
+View Counter
+
 ![:name](https://count.getloli.com/get/@:todov2?theme=gelbooru)
 
 # 기존의 Todo-List App을 개량한 버전입니다.
