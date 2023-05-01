@@ -51,20 +51,20 @@ View Counter
 
  ## File Tree
 📦src
- ┣ 📂Pages
- ┃ ┣ 📜Home.jsx : 홈 페이지
- ┃ ┣ 📜Todo.jsx : 할일의 상세 페이지 
- ┃ ┗ 📜Todos.jsx : 할일의 인덱스를 표기하는 페이지
- ┣ 📂components
- ┃ ┣ 📜InputAera.jsx : 입력 받는 컴포넌트
- ┃ ┗ 📜OutputAera.jsx : 출력 컴포넌트
- ┣ 📂redux
- ┃ ┣ 📂config
- ┃ ┃ ┗ 📜configStore.js
- ┃ ┣ 📂modules
- ┃ ┗  ┗ 📜todo.js
- ┣ 📂shared
- ┃ ┗ 📜router.js
- ┣ 📜App.css
- ┣ 📜App.jsx
- ┗ 📜Style.jsx
+┣ 📂Pages
+┃ ┣ 📜Home.jsx : 홈 페이지
+┃ ┣ 📜Todo.jsx : 할일의 상세 페이지 
+┃ ┗ 📜Todos.jsx : 할일의 인덱스를 표기하는 페이지
+┣ 📂components
+┃ ┣ 📜InputAera.jsx : 입력 받는 컴포넌트
+┃ ┗ 📜OutputAera.jsx : 출력 컴포넌트
+┣ 📂redux
+┃ ┣ 📂config
+┃ ┃ ┗ 📜configStore.js
+┃ ┣ 📂modules
+┃ ┗  ┗ 📜todo.js
+┣ 📂shared
+┃ ┗ 📜router.js
+┣ 📜App.css
+┣ 📜App.jsx
+┗ 📜Style.jsx
