@@ -7,12 +7,11 @@ function Todos() {
   return (
     <div>
       {
-        todoStore.map((todo) => {
+        todoStore.map((item) => {
           return (
-            <div key={todo.id}>
-            <div>할일: {todo.id}</div>
-            <Link to={`/todos/${todo.id}`}>
-              <span style={{ cursor: 'pointer' }}>➡️ Go to: {todo.title}</span>
+            <div key={item.id}>
+            <Link to={`/todos/${item.id}`}>
+              <span style={{ cursor: 'pointer' }}>➡️ Go to: {item.title}</span>
             </Link>
           </div>
           )

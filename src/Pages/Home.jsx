@@ -12,8 +12,6 @@ import { createTodo, removeTodo, changeTodo } from "../redux/modules/todo";
 function Home() {
   // Store 조회
   const todoStore = useSelector((state) => state).todoReducer;
-
-  console.log(todoStore)
   // Store에 데이터를 보내주기 위한 메서드
   const dispatch = useDispatch();
 
