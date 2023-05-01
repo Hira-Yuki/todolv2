@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// import Router from "../shared/router";
 import "../App.css";
 import InputAera from "../components/InputAera";
 import OutputAera from "../components/OutputAera";
-import SideBarAera from "../components/SideBarAera";
 // Styled Components를 저장한 파일의 전체를 임포트하고 별칭으로 S를 붙여서 호출함
 import * as S from "../Style";
 import { useDispatch, useSelector } from "react-redux";

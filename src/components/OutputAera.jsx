@@ -14,7 +14,7 @@ function OutputAera({todoStore, isDoneHandler,removeTodoButton
             .map((item) => {
               return (
                 <S.StTodoCard key={item.id}>
-                  <h4>{item.title}<Link to={`/todos/${item.id}`}>상세보기</Link></h4>
+                  <h4>{item.title} <Link to={`/todos/${item.id}`}>상세보기</Link></h4>
                   <S.StPCard>{item.body}</S.StPCard>
                   <footer>id: {item.id}</footer>
                   <button onClick={() => isDoneHandler(item.id)}>Done</button>

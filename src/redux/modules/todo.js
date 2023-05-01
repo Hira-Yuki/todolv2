@@ -4,8 +4,8 @@ const REMOVE_TODO = "todo/REMOVE_TODO";
 const CHANGE_ISDONE = "todo/CHANGE_ISDONE";
 
 const initialState = [
-  { id: 1682945462843, title: "1", body: "1", isDone: false },
-  { id: 1682945464525, title: "2", body: "2", isDone: false },
+  { id: 1682945462843, title: "테스트 제목 1", body: "테스트 1", isDone: false },
+  { id: 1682945464525, title: "테스트 제목 2", body: "테스트 2", isDone: false },
 ];
 
 // 할일을 만드는 Action Creator

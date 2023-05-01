@@ -17,7 +17,7 @@ View Counter
 
 ### 공통
 - **todos 데이터는 리덕스를 사용해서 전역으로 상태를 관리합니다.**
-- todos 모듈은 `**Ducks 패턴**`으로 구현합니다.
+- todos 모듈은 **`Ducks 패턴`**으로 구현합니다.
 
 ### 메인 페이지
 - 디자인과 화면 구성은 자유
@@ -57,8 +57,7 @@ src
  ┃ ┗ Todos.jsx
  ┣ components
  ┃ ┣ InputAera.jsx
- ┃ ┣ OutputAera.jsx
- ┃ ┗ SideBarAera.jsx
+ ┃ ┗ OutputAera.jsx
  ┣ redux
  ┃ ┣ config
  ┃ ┃ ┗ configStore.js
