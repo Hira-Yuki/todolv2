@@ -17,7 +17,7 @@ View Counter
 
 ### 공통
 - **todos 데이터는 리덕스를 사용해서 전역으로 상태를 관리합니다.**
-- todos 모듈은 `**Ducks 패턴**`으로 구현합니다.
+- todos 모듈은 **`Ducks 패턴`**으로 구현합니다.
 
 ### 메인 페이지
 - 디자인과 화면 구성은 자유
@@ -48,3 +48,23 @@ View Counter
  - App : 최상위 부모 컴포넌트, 기능 동작에 필요한 함수를 자녀 컴포넌트로 내려줌
  - InputAera : 데이터 입력을 수행하는 컴포넌트 
  - OutpotAera : 출력을 수행하는 컴포넌트 할일 목록을 출력해 보여주는 기능을 수행함
+
+ ## File Tree
+📦src
+ ┣ 📂Pages
+ ┃ ┣ 📜Home.jsx : 홈 페이지
+ ┃ ┣ 📜Todo.jsx : 할일의 상세 페이지 
+ ┃ ┗ 📜Todos.jsx : 할일의 인덱스를 표기하는 페이지
+ ┣ 📂components
+ ┃ ┣ 📜InputAera.jsx : 입력 받는 컴포넌트
+ ┃ ┗ 📜OutputAera.jsx : 출력 컴포넌트
+ ┣ 📂redux
+ ┃ ┣ 📂config
+ ┃ ┃ ┗ 📜configStore.js
+ ┃ ┣ 📂modules
+ ┃ ┗  ┗ 📜todo.js
+ ┣ 📂shared
+ ┃ ┗ 📜router.js
+ ┣ 📜App.css
+ ┣ 📜App.jsx
+ ┗ 📜Style.jsx

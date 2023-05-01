@@ -73,5 +73,42 @@ export const StTodoCards = styled.div`
 `;
 
 export const StPCard = styled.p`
-margin: 5px;
-`
+  margin: 5px;
+`;
+
+// 여기부터 상세페이지 디자인
+export const StDitailContainer = styled.div`
+  margin: 200px auto;
+  width: 500px;
+  height: 300px;
+  border: 2px solid black;
+  padding: 10px;
+  box-shadow: 5px 5px gray;
+  position: relative; /* 부모 컨테이너의 위치를 설정 */
+`;
+
+export const StH1 = styled.h1`
+  font-size: 32px;
+  border-left: 5px solid blueviolet;
+  padding-left: 5px;
+  color: brown;
+  margin: 10px;
+`;
+export const StBody = styled.div`
+  font-weight: bold;
+  margin: 10px;
+`;
+
+export const StLink = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+`;
+
+export const StId = styled.div`
+  position: absolute; /* 자식 p 태그의 위치를 설정 */
+  top: 0; /* 위쪽으로 위치 */
+  right: 0; /* 오른쪽으로 위치 */
+  margin: 10px; /* 마진을 추가하여 여백을 만듦 */
+`;
