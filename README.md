@@ -50,21 +50,21 @@ View Counter
  - OutpotAera : 출력을 수행하는 컴포넌트 할일 목록을 출력해 보여주는 기능을 수행함
 
  ## File Tree
- 파일 구조 설계 
-src
- ┣ Pages
- ┃ ┣ Home.jsx
- ┃ ┗ Todos.jsx
- ┣ components
- ┃ ┣ InputAera.jsx
- ┃ ┗ OutputAera.jsx
- ┣ redux
- ┃ ┣ config
- ┃ ┃ ┗ configStore.js
- ┃ ┣ modules
- ┃ ┃ ┣ testModules.jsx
- ┃ ┗ ┗ todo.js
- ┣ shared
- ┃ ┗ router.js
- ┣ App.jsx
- ┗ Style.jsx
+📦src
+ ┣ 📂Pages
+ ┃ ┣ 📜Home.jsx : 홈 페이지
+ ┃ ┣ 📜Todo.jsx : 할일의 상세 페이지 
+ ┃ ┗ 📜Todos.jsx : 할일의 인덱스를 표기하는 페이지
+ ┣ 📂components
+ ┃ ┣ 📜InputAera.jsx : 입력 받는 컴포넌트
+ ┃ ┗ 📜OutputAera.jsx : 출력 컴포넌트
+ ┣ 📂redux
+ ┃ ┣ 📂config
+ ┃ ┃ ┗ 📜configStore.js
+ ┃ ┣ 📂modules
+ ┃ ┗  ┗ 📜todo.js
+ ┣ 📂shared
+ ┃ ┗ 📜router.js
+ ┣ 📜App.css
+ ┣ 📜App.jsx
+ ┗ 📜Style.jsx
