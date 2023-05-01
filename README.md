@@ -48,3 +48,24 @@ View Counter
  - App : 최상위 부모 컴포넌트, 기능 동작에 필요한 함수를 자녀 컴포넌트로 내려줌
  - InputAera : 데이터 입력을 수행하는 컴포넌트 
  - OutpotAera : 출력을 수행하는 컴포넌트 할일 목록을 출력해 보여주는 기능을 수행함
+
+ ## File Tree
+ 파일 구조 설계 
+src
+ ┣ Pages
+ ┃ ┣ Home.jsx
+ ┃ ┗ Todos.jsx
+ ┣ components
+ ┃ ┣ InputAera.jsx
+ ┃ ┣ OutputAera.jsx
+ ┃ ┗ SideBarAera.jsx
+ ┣ redux
+ ┃ ┣ config
+ ┃ ┃ ┗ configStore.js
+ ┃ ┣ modules
+ ┃ ┃ ┣ testModules.jsx
+ ┃ ┗ ┗ todo.js
+ ┣ shared
+ ┃ ┗ router.js
+ ┣ App.jsx
+ ┗ Style.jsx
