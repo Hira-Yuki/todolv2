@@ -7,7 +7,6 @@ import * as S from "../Style";
 import { useDispatch, useSelector } from "react-redux";
 import { createTodo, removeTodo, changeTodo } from "../redux/modules/todo";
 import { Link } from "react-router-dom";
-import Todos from "./Todos";
 
 function Home() {
   // Store 조회
@@ -83,7 +82,7 @@ function Home() {
             onTodoBodyHandler={onTodoBodyHandler}
             onSubmitHandler={onSubmitHandler}
           />
-          <Link to={"/Todos"}>할일 모아보기</Link>
+          <Link to={"/Todos"}>할일 리스트로 보기</Link>
           <p> &nbsp;✓ 사이드 바에 콘텐츠 추가?</p>
         </S.StSidebar>
         {/* 출력 영역 */}

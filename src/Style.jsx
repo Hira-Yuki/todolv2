@@ -112,3 +112,26 @@ export const StId = styled.div`
   right: 0; /* 오른쪽으로 위치 */
   margin: 10px; /* 마진을 추가하여 여백을 만듦 */
 `;
+
+export const StTable = styled.table`
+  border-collapse: collapse;
+  border: 2px solid black;
+  width: 900px;
+`;
+
+export const StNumberColumn = styled.th`
+  border: 1px solid black;
+  text-align: center;
+  width: 300px;
+`;
+
+export const StTitleColumn = styled.td`
+  border: 1px solid black;
+  text-align: center;
+  width: 600px;
+`;
+
+export const StTitleLink = styled.span`
+  display: block;
+  text-align: center;
+`;
