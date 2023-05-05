@@ -44,6 +44,13 @@ export const StSidebar = styled.div`
   border-radius: 10px;  */
   flex-basis: 25%;
 `;
+export const StSidebarModule = styled.div`
+  border: 2px solid tomato;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+`
+
 
 export const StOutputAera = styled.div`
   margin: 5px;

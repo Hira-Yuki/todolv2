@@ -6,7 +6,7 @@ import OutputAera from "../components/OutputAera";
 import * as S from "../Style";
 import { useDispatch, useSelector } from "react-redux";
 import { createTodo, removeTodo, changeTodo } from "../redux/modules/todo";
-import { Link } from "react-router-dom";
+import Todos from "./Todos";
 
 function Home() {
   // Store 조회
@@ -17,6 +17,9 @@ function Home() {
   // 할일을 생성하기 위해 입력한 데이터를 받아오기
   const [subtitle, setSubtitle] = useState("");
   const [todoBody, setTodoBody] = useState("");
+
+  // 출력 방식을 변경하기 위한 State
+  const [view, setView] = useState(false);
 
   // 변경된 값을 저장하는 함수
   const onSubtitleHandler = (event) => {
@@ -52,17 +55,22 @@ function Home() {
   };
 
   // 할일을 제거하는 함수
-  const removeTodoButton = function (id) {
+  const removeTodoButton = (id) => {
     const removeTodoId = id;
 
     dispatch(removeTodo(removeTodoId));
   };
 
   // 할일의 상태를 변경하는 함수
-  const isDoneHandler = function (id) {
+  const isDoneHandler = (id) => {
     const changeTodoId = id;
 
     dispatch(changeTodo(changeTodoId));
+  };
+
+  // 아웃풋 리스트로 변경하는 함수
+  const isListHandler = () => {
+    setView(!view);
   };
 
   return (
@@ -82,15 +90,20 @@ function Home() {
             onTodoBodyHandler={onTodoBodyHandler}
             onSubmitHandler={onSubmitHandler}
           />
-          <Link to={"/Todos"}>할일 리스트로 보기</Link>
-          <p> &nbsp;✓ 사이드 바에 콘텐츠 추가?</p>
+          <S.StSidebarModule>
+            <button onClick={isListHandler}>보기 방법 변경</button>
+          </S.StSidebarModule>
         </S.StSidebar>
         {/* 출력 영역 */}
-        <OutputAera
-          todoStore={todoStore}
-          isDoneHandler={isDoneHandler}
-          removeTodoButton={removeTodoButton}
-        />
+        {view ? (
+          <Todos />
+        ) : (
+          <OutputAera
+            todoStore={todoStore}
+            isDoneHandler={isDoneHandler}
+            removeTodoButton={removeTodoButton}
+          />
+        )}
       </S.StMain>
       {/* 푸터 영역 */}
       <S.StFooter>Designed by Hira</S.StFooter>

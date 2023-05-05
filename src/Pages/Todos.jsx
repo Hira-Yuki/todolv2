@@ -9,7 +9,7 @@ function Todos() {
 
   return (
     <div>
-      <Link to={"/"}>홈으로 돌아가기</Link>
+      <h3>오늘 할일을 내일로 미루지 말자!</h3>
       <S.StTable>
         <colgroup>
           <col style={{ width: "300px" }} />
@@ -22,7 +22,7 @@ function Todos() {
           </tr>
         </thead>
         <tbody>
-          {todoStore.map((item) => {
+          {todoStore.filter((item)=> !item.isDone).map((item) => {
             return (
               <tr key={item.id}>
                 <S.StNumberColumn>{count++}</S.StNumberColumn>
