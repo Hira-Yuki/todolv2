@@ -123,7 +123,7 @@ export const StId = styled.div`
 export const StTable = styled.table`
   border-collapse: collapse;
   border: 2px solid black;
-  width: 900px;
+  width: 700px;
 `;
 
 export const StNumberColumn = styled.th`
